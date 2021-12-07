@@ -92,7 +92,7 @@ def cm_hyGCN(batch_size, hidden_size, n_steps, learning_rate, num_category, opt,
 	
 	os.environ["CUDA_VISIBLE_DEVICES"] = '0'
 	
-	gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.4)
+	gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.8)
 	with tf.Session(config=tf.ConfigProto(gpu_options=gpu_options)) as sess:
 		if int((tf.__version__).split('.')[1]) < 12 and int((tf.__version__).split('.')[0]) < 1:
 			init = tf.initialize_all_variables()
